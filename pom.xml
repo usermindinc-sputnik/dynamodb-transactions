@@ -1,13 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amazonaws.services.dynamodbv2</groupId>
     <artifactId>amazon-dynamodb-transactions</artifactId>
     <packaging>jar</packaging>
     <name>Amazon DynamoDB Transactions on the AWS SDK for Java</name>
-    <version>1.1.2-usermind-1-SNAPSHOT</version>
+    <version>1.1.2-usermind-1</version>
     <description>Amazon DynamoDB Transactions on the AWS SDK for Java provide client-side multi-item, multi-table transactions on top of Amazon DynamoDB.</description>
     <url>https://aws.amazon.com/dynamodb</url>
 
@@ -15,7 +13,8 @@
         <url>https://github.com/usermindinc-sputnik/dynamodb-transactions</url>
         <connection>scm:git:https://github.com/usermindinc-sputnik/dynamodb-transactions.git</connection>
         <developerConnection>scm:git:ssh://github.com/usermindinc-sputnik/dynamodb-transactions.git</developerConnection>
-    </scm>
+      <tag>amazon-dynamodb-transactions-1.1.2-usermind-1</tag>
+  </scm>
 
     <licenses>
         <license>
