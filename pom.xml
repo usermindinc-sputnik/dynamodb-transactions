@@ -12,7 +12,9 @@
     <url>https://aws.amazon.com/dynamodb</url>
 
     <scm>
-        <url>https://github.com/awslabs/dynamodb-transactions.git</url>
+        <url>https://github.com/usermindinc-sputnik/dynamodb-transactions</url>
+        <connection>scm:git:https://github.com/usermindinc-sputnik/dynamodb-transactions.git</connection>
+        <developerConnection>scm:git:ssh://github.com/usermindinc-sputnik/dynamodb-transactions.git</developerConnection>
     </scm>
 
     <licenses>
