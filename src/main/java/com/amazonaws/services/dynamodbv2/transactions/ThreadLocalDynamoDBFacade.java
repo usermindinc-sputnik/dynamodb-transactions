@@ -1,16 +1,16 @@
 /**
  * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
- * Licensed under the Amazon Software License (the "License"). 
- * You may not use this file except in compliance with the License. 
+ * Licensed under the Amazon Software License (the "License").
+ * You may not use this file except in compliance with the License.
  * A copy of the License is located at
  *
  *  http://aws.amazon.com/asl/
  *
- * or in the "license" file accompanying this file. This file is distributed 
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, express 
- * or implied. See the License for the specific language governing permissions 
- * and limitations under the License. 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, express
+ * or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.transactions;
 
@@ -37,6 +37,8 @@ import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemResult;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableResult;
+import com.amazonaws.services.dynamodbv2.model.DescribeLimitsRequest;
+import com.amazonaws.services.dynamodbv2.model.DescribeLimitsResult;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
@@ -193,6 +195,11 @@ public class ThreadLocalDynamoDBFacade implements AmazonDynamoDB {
     @Override
     public DeleteTableResult deleteTable(String tableName) throws AmazonServiceException, AmazonClientException {
         return getBackend().deleteTable(tableName);
+    }
+
+    @Override
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+        return getBackend().describeLimits(describeLimitsRequest);
     }
 
     @Override

@@ -37,6 +37,8 @@ import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemResult;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableResult;
+import com.amazonaws.services.dynamodbv2.model.DescribeLimitsRequest;
+import com.amazonaws.services.dynamodbv2.model.DescribeLimitsResult;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
@@ -78,7 +80,7 @@ public class TransactionManagerDynamoDBFacade implements AmazonDynamoDB {
             throws AmazonServiceException, AmazonClientException {
         return txManager.getItem(request, isolationLevel);
     }
-    
+
     @Override
     public GetItemResult getItem(String tableName,
             Map<String, AttributeValue> key) throws AmazonServiceException,
@@ -226,6 +228,11 @@ public class TransactionManagerDynamoDBFacade implements AmazonDynamoDB {
     @Override
     public DeleteTableResult deleteTable(String tableName)
             throws AmazonServiceException, AmazonClientException {
+        throw new UnsupportedOperationException("Use the underlying client instance instead");
+    }
+
+    @Override
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
         throw new UnsupportedOperationException("Use the underlying client instance instead");
     }
 
