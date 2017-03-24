@@ -63,6 +63,7 @@ import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateTableResult;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
+import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 
 /**
  * Facade for {@link AmazonDynamoDB} that forwards requests to a
@@ -448,6 +449,11 @@ public class TransactionDynamoDBFacade implements AmazonDynamoDB {
     public BatchGetItemResult batchGetItem(
             Map<String, KeysAndAttributes> requestItems)
             throws AmazonServiceException, AmazonClientException {
+        throw new UnsupportedOperationException("Use the underlying client instance instead");
+    }
+
+    @Override
+    public AmazonDynamoDBWaiters waiters() {
         throw new UnsupportedOperationException("Use the underlying client instance instead");
     }
 
