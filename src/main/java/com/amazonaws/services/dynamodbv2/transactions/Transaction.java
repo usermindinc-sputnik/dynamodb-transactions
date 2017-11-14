@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodbv2.transactions;
 import static com.amazonaws.services.dynamodbv2.transactions.TransactionItem.State;
 import static com.amazonaws.services.dynamodbv2.transactions.exceptions.TransactionAssertionException.txAssert;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -1467,6 +1468,24 @@ public class Transaction {
             @Override
             public Void call() throws Exception {
                 txManager.getClientMapper().save(item);
+                return null;
+            }
+        });
+    }
+
+    /**
+     * Save an item using the mapper with save condition.
+     *
+     * @param item
+     *            An item object with key attributes populated.
+     * @param condition
+     *            Condition to save the entity
+     */
+    public <T> void save(final T item, final DynamoDBSaveExpression condition) {
+        doWithMapper(new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                txManager.getClientMapper().save(item, condition);
                 return null;
             }
         });
